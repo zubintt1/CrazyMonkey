@@ -1,14 +1,16 @@
-FileOperator:
+StageOneOperator:
 
-<FileOperator@BoxLayout>:
+<StageOneOperator>:
     orientation: "vertical"
-	BoxLayout:
+	FloatLayout:
 	    Button:
-	        height: "40dp"
+	    	height: "400dp"
 	        text: "Upload File"
-	        size_hint_x: 1
-	        size_hint_y: 1
+	        pos: 200, 400
+	        size_hint_x: 0.15
+	        size_hint_y: 0.15
 	    Button:
 	        text: "Download File"
-	        size_hint_x: 25
-	        size_hint_y: 2
+	        size_hint_x: 0.15
+	        size_hint_y: 0.15
+	        pos: 500, 400
