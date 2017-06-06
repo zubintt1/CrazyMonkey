@@ -6,11 +6,28 @@ StageOneOperator:
 	    Button:
 	    	height: "400dp"
 	        text: "Upload File"
-	        pos: 200, 400
+	        pos: 100, 400
 	        size_hint_x: 0.15
 	        size_hint_y: 0.15
+#	        on_press: root.upload_file()
+	        on_release: root.show_load()
+
+
 	    Button:
 	        text: "Download File"
 	        size_hint_x: 0.15
 	        size_hint_y: 0.15
-	        pos: 500, 400
+	        pos: 300, 400
+	        on_press: root.download_file()
+
+		ToggleButton:
+            text: "Icon"
+            size_hint_x: 0.15
+	        size_hint_y: 0.15
+	        pos: 600, 400
+
+#        FileChooserListView:
+#            id: filechooser
+##            on_selection: text_input.text = self.selection and self.selection[0] or ''
+#            on_press: root.upload_file()
+            	        
