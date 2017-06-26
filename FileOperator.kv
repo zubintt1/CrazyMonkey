@@ -1,6 +1,6 @@
-StageOneOperator:
+Master_Control:
 
-<StageOneOperator>:
+<Master_Control>:
     orientation: "vertical"
 	FloatLayout:
 	    Button:
@@ -9,9 +9,8 @@ StageOneOperator:
 	        pos: 100, 400
 	        size_hint_x: 0.15
 	        size_hint_y: 0.15
-#	        on_press: root.upload_file()
-	        on_release: root.show_load()
-
+	        on_press: root.upload_file()
+#	        on_release: root.show_load()
 
 	    Button:
 	        text: "Download File"
@@ -20,14 +19,24 @@ StageOneOperator:
 	        pos: 300, 400
 	        on_press: root.download_file()
 
-		ToggleButton:
-            text: "Icon"
-            size_hint_x: 0.15
+
+	    Button:
+	        text: "Start Ftp Server"
+	        size_hint_x: 0.15
 	        size_hint_y: 0.15
 	        pos: 600, 400
+	        on_press: root.start_ftp_server()
+
+
+
+#		ToggleButton:
+#            text: "Icon"
+#            size_hint_x: 0.15
+#	        size_hint_y: 0.15
+#	        pos: 600, 400
+#	        on_release: root.work_on_something()
 
 #        FileChooserListView:
 #            id: filechooser
-##            on_selection: text_input.text = self.selection and self.selection[0] or ''
+#            on_selection: text_input.text = self.selection and self.selection[0] or ''
 #            on_press: root.upload_file()
-            	        
