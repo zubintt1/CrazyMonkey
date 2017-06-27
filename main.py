@@ -10,10 +10,13 @@ from kivy.factory import Factory
 from kivy.properties import ObjectProperty
 from kivy.uix.popup import Popup
 from ftp_module import Ftp_Control
-
+import threading
+from ftplib import FTP
+import sys
 
 class Master_Control(BoxLayout):
     alpha = 0
+    server_port = 0
 
     def upload_file(self):
         self.alpha = self.alpha + 1
@@ -23,10 +26,25 @@ class Master_Control(BoxLayout):
         self.alpha = self.alpha - 1
         print(self.alpha)
 
+    def ftp_connection_check(self):
+        host = '127.0.0.1'
+        port = self.server_port
+
+        ftp_connection = FTP(user='user',passwd='12345')
+        try:
+            ftp_connection.connect(host,port)
+            ftp_connection.login()
+        except:
+            print(sys.exc_info()[0])
+        print(sys.exc_info()[0])
+
     def start_ftp_server(self):
         a = Ftp_Control.random_port_gen(self)
+        self.server_port = a
         print("Ftp Server Running On 127.0.0.1 port=" + str(a))
-        Ftp_Control.start_ftp_server(self,a)
+        ftp_thread = threading.Thread(name='ftp_thread',target=Ftp_Control.start_ftp_server,args=(self,a))
+        ftp_thread.setDaemon(True)
+        ftp_thread.start()
         print("Ftp server started")
 
 

@@ -6,7 +6,7 @@ Master_Control:
 	    Button:
 	    	height: "400dp"
 	        text: "Upload File"
-	        pos: 100, 400
+	        pos: 50, 400
 	        size_hint_x: 0.15
 	        size_hint_y: 0.15
 	        on_press: root.upload_file()
@@ -16,7 +16,7 @@ Master_Control:
 	        text: "Download File"
 	        size_hint_x: 0.15
 	        size_hint_y: 0.15
-	        pos: 300, 400
+	        pos: 250, 400
 	        on_press: root.download_file()
 
 
@@ -24,9 +24,15 @@ Master_Control:
 	        text: "Start Ftp Server"
 	        size_hint_x: 0.15
 	        size_hint_y: 0.15
-	        pos: 600, 400
+	        pos: 450, 400
 	        on_press: root.start_ftp_server()
 
+	    Button:
+	        text: "Check Ftp Server"
+	        size_hint_x: 0.15
+	        size_hint_y: 0.15
+	        pos: 650, 400
+	        on_press: root.ftp_connection_check()
 
 
 #		ToggleButton:
