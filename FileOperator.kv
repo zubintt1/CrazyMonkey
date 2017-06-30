@@ -1,17 +1,18 @@
 Master_Control:
 
 
-
 <Master_Control>:
     orientation: "vertical"
     size: root.size
     pos: root.pos
+    text_input: text_input
 
 	FloatLayout:
 
 
 	FileChooserListView:
 	    id: filechooser
+	    on_selection: text_input.text = self.selection and self.selection[0] or ''
 
 	Button:
 	    height: "400dp"
@@ -19,7 +20,7 @@ Master_Control:
 	    pos: 50, 400
 	    size_hint_x: 0.15
 	    size_hint_y: 0.15
-	    on_release: root.upload_file(filechooser.path, filechooser.selection)
+	    on_press: root.upload_file(filechooser.path, filechooser.selection)
 #	        on_press: root.upload_file()
 #	        on_release: root.show_load()
 
@@ -44,6 +45,13 @@ Master_Control:
 	    size_hint_y: 0.15
 	    pos: 650, 400
 	    on_press: root.ftp_connection_check()
+
+	TextInput:
+	    id: text_input
+        size_hint_x: 1
+	    size_hint_y: 2
+        multiline: True
+
 
 
 

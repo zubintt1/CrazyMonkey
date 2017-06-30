@@ -13,24 +13,54 @@ from ftp_module import Ftp_Control
 import threading
 from ftplib import FTP
 import sys
+import re
+
+class LoadDialog(FloatLayout):
+    load = ObjectProperty(None)
+    cancel = ObjectProperty(None)
+
 
 class Master_Control(BoxLayout):
     alpha = 0
     server_port = 0
+    text_input = ObjectProperty(None)
 
+    def dismiss_popup(self):
+        self._popup.dismiss()
 
     def load(self, path, filename):
-        with open(os.path.join(path, filename[0])) as stream:
-            file_content = stream.read()
+        with open(os.path.join(path, filename[0]),encoding="utf8") as stream:
+            self.text_input.text = stream.read()
 
-        return file_content
-        # self.dismiss_popup()
+        #return file_content
+        self.dismiss_popup()
+
+    def get_file_to_upload(self,path,filename):
+        with open(os.path.join(path, filename[0]),encoding="utf8",mode='r') as stream:
+            self.text_input.text = stream.read()
+
+
+
 
     def upload_file(self, path, filename):
-        # print("Path="+str(path)+"\nFile Name="+str(filename))
-        content = self.load(path,filename)
-        self._popup = Popup(title="Load file", content=content,size_hint=(0.9, 0.9))
-        self._popup.open()
+        file_to_upload = open(os.path.join(path, filename[0]),'rb')
+        host = '127.0.0.1'
+        port = self.server_port
+        ftp_connection = FTP()
+        try:
+            ftp_connection.connect(host,port)
+            message = ftp_connection.login('user', '12345')
+            print(message)
+            temp_file_name = filename[0]
+            temp_file_names = temp_file_name.split('\\')
+            ftp_connection.storbinary('STOR '+temp_file_names[1],file_to_upload)
+            file_to_upload.close()
+            ftp_connection.quit()
+            print("File Upload Done")
+        except:
+            print(sys.exc_info())
+            print("File Upload Not Done")
+
         self.alpha = self.alpha + 1
         print(self.alpha)
 
@@ -68,8 +98,7 @@ class Master_Control(BoxLayout):
 
 
 
-    def dismiss_popup(self):
-        self._popup.dismiss()
+
 #
 #     def work_on_something(self):
 #         print("Hello Zubin")
