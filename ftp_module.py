@@ -1,7 +1,7 @@
 from pyftpdlib.authorizers import DummyAuthorizer
 from pyftpdlib.handlers import FTPHandler
 from pyftpdlib.servers import FTPServer
-from static_components import ROOT_DIR
+from static_components import ROOT_DIR,User_Profile_Path
 import logging
 import random
 
@@ -10,8 +10,8 @@ class Ftp_Control():
 
     def start_ftp_server(self,port):
         authorizer = DummyAuthorizer()
-        authorizer.add_user("user", "12345", ROOT_DIR+"\\User_Profiles", perm="elradfmw")
-        authorizer.add_anonymous(ROOT_DIR+"\\User_Profiles")
+        authorizer.add_user("user", "12345", User_Profile_Path, perm="elradfmw")
+        authorizer.add_anonymous(User_Profile_Path)
         handler = FTPHandler
         handler.authorizer = authorizer
         logging.basicConfig(filename=ROOT_DIR+"\\File_Logs\\ftp.log", level=logging.DEBUG)

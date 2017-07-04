@@ -14,6 +14,7 @@ import threading
 from ftplib import FTP
 import sys
 import re
+from Database_Manager import Dbwork
 
 class LoadDialog(FloatLayout):
     load = ObjectProperty(None)
@@ -63,6 +64,10 @@ class Master_Control(BoxLayout):
 
         self.alpha = self.alpha + 1
         print(self.alpha)
+
+    def check_database(self):
+        Dbwork.connect_database_check(self)
+        print("Database Connectivity Check Done")
 
     def download_file(self):
         self.alpha = self.alpha - 1
