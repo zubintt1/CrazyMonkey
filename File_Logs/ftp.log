@@ -1,0 +1,19 @@
+INFO:pyftpdlib:>>> starting FTP server on 127.0.0.1:2123, pid=7304 <<<
+INFO:pyftpdlib:concurrency model: async
+INFO:pyftpdlib:masquerade (NAT) address: None
+INFO:pyftpdlib:passive ports: None
+INFO:pyftpdlib:>>> starting FTP server on 127.0.0.1:212, pid=12976 <<<
+INFO:pyftpdlib:concurrency model: async
+INFO:pyftpdlib:masquerade (NAT) address: None
+INFO:pyftpdlib:passive ports: None
+DEBUG:pyftpdlib:poller: 'pyftpdlib.ioloop.Select'
+DEBUG:pyftpdlib:authorizer: 'pyftpdlib.authorizers.DummyAuthorizer'
+DEBUG:pyftpdlib:handler: 'pyftpdlib.handlers.type'
+DEBUG:pyftpdlib:max connections: 512
+DEBUG:pyftpdlib:max connections per ip: 5
+DEBUG:pyftpdlib:timeout: 300
+DEBUG:pyftpdlib:banner: 'pyftpdlib 1.5.3 ready.'
+DEBUG:pyftpdlib:max login attempts: 3
+INFO:pyftpdlib:127.0.0.1:8664-[] FTP session opened (connect)
+INFO:pyftpdlib:127.0.0.1:8664-[user] USER 'user' logged in.
+INFO:pyftpdlib:127.0.0.1:8664-[user] FTP session closed (disconnect).

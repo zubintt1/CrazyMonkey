@@ -3,6 +3,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from Models.Users import User
 import datetime
+from Models.User_Data import User_Data
 
 class Dbwork:
     def __init__(self):
@@ -24,5 +25,10 @@ class Dbwork:
         print("Created the Table")
         session.add(new_record)
         session.commit()
+
+    def save_file_in_database(self):
+        Session = sessionmaker(bind=self.engine)
+        session = Session()
+        # new_record = User_Data()
 
 
