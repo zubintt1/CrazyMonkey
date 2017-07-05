@@ -15,6 +15,9 @@ from ftplib import FTP
 import sys
 import re
 from Database_Manager import Dbwork
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+import pymysql
 
 class LoadDialog(FloatLayout):
     load = ObjectProperty(None)
@@ -25,6 +28,7 @@ class Master_Control(BoxLayout):
     alpha = 0
     server_port = 0
     text_input = ObjectProperty(None)
+
 
     def dismiss_popup(self):
         self._popup.dismiss()
@@ -66,7 +70,8 @@ class Master_Control(BoxLayout):
         print(self.alpha)
 
     def check_database(self):
-        Dbwork.connect_database_check(self)
+        db_work = Dbwork()
+        db_work.connect_to_database()
         print("Database Connectivity Check Done")
 
     def download_file(self):
