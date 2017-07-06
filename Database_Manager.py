@@ -20,7 +20,7 @@ class Dbwork:
     def connect_to_database(self):
         Session = sessionmaker(bind=self.engine)
         session = Session()
-        new_record = User("Bodhiswattwa","","Tewari",datetime.datetime(year=1993,month=5,day=5),"zubin@indialends.com","9555029279",self.engine)
+        new_record = User(self.engine)
         new_record.create_the_table_in_db()
         print("Created the Table")
         session.add(new_record)

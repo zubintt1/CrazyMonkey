@@ -20,8 +20,11 @@ class User(Base):
     user_password = Column(String(6000),default="")#models.CharField()
     is_password_reset = Column(Boolean,default=False)
 
+    def __init__(self,engine):
+        self.engine = engine
 
-    def __init__(self,first_name,middle_name,last_name,date_of_birth,email_id,mobile_number,engine):
+
+    def create_user(self,first_name,middle_name,last_name,date_of_birth,email_id,mobile_number,engine):
         self.first_name = first_name
         self.middle_name = middle_name
         self.last_name = last_name

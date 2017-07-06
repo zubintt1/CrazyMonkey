@@ -18,6 +18,7 @@ from Database_Manager import Dbwork
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import pymysql
+from Init_Work import Initialize_Project
 
 
 class LoadDialog(FloatLayout):
@@ -102,22 +103,8 @@ class Master_Control(BoxLayout):
         print("Ftp server started")
 
 
-    # def show_load(self):
-    #     content = LoadDialog(load=self.load, cancel=self.dismiss_popup)
-    #     self._popup = Popup(title="Load file", content=content,size_hint=(0.9, 0.9))
-    #     self._popup.open()
-
-
-
-
-#
-#     def work_on_something(self):
-#         print("Hello Zubin")
-#
-#
-
-
 class FileOperator(App):
+    i_p = Initialize_Project()
     pass
 
 
