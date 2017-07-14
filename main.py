@@ -73,7 +73,7 @@ class Master_Control(BoxLayout):
 
     def check_database(self):
         db_work = Dbwork()
-        db_work.connect_to_database()
+        db_work.check_tables()
         print("Database Connectivity Check Done")
 
     def download_file(self):

@@ -31,4 +31,12 @@ class Dbwork:
         session = Session()
         # new_record = User_Data()
 
+    def check_tables(self):
+        db = pymysql.connect("localhost", "cmdd_admin", "cmdd@2017", "Crazy_Monkey_dev_Db")
+        cursor = db.cursor()
+        table_name = "users"
+        cursor.execute("SELECT count(*) FROM information_schema.TABLES WHERE (TABLE_SCHEMA = 'Crazy_Monkey_dev_Db') AND (TABLE_NAME = '"+table_name+"')")
+        data = cursor.fetchone()
+        print("Table Count =%s " % data + "Status= %s" + str(db.server_status))
+
 
