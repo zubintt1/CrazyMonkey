@@ -19,6 +19,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import pymysql
 from Init_Work import Initialize_Project
+import static_components
 
 
 class LoadDialog(FloatLayout):
@@ -106,6 +107,10 @@ class Master_Control(BoxLayout):
 class FileOperator(App):
     i_p = Initialize_Project()
     pass
+
+    def build(self):
+        kv_file_path = static_components.View_Path+"\\FileOperator.kv"
+        self.load_kv(kv_file_path)
 
 
 if __name__ == '__main__':

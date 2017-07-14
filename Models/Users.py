@@ -4,6 +4,7 @@ import datetime
 from sqlalchemy import *
 #from sqlalchemy import Column, Integer, String, DATETIME,Boolean
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 
 Base = declarative_base()
 class User(Base):
@@ -22,6 +23,13 @@ class User(Base):
 
     def __init__(self,engine):
         self.engine = engine
+
+    def load_user_profile(self,user_id):
+        new_user = User(self.engine)
+        Session = sessionmaker(bind=self.engine)
+        session = Session()
+        new_user = User.query.filter_by(user_id=user_id)
+        return new_user
 
 
     def create_user(self,first_name,middle_name,last_name,date_of_birth,email_id,mobile_number,engine):
