@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5999bea-4db6-4cb7-8a64-fd0e61947ac5" name="Default" comment="User Creation In database Done. ORM Connectivity Completed">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/FileOperator.kv" afterPath="$PROJECT_DIR$/View/FileOperator.kv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/Users.py" afterPath="$PROJECT_DIR$/Models/Users.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static_components.py" afterPath="$PROJECT_DIR$/static_components.py" />
-    </list>
+    <list default="true" id="a5999bea-4db6-4cb7-8a64-fd0e61947ac5" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -570,7 +564,14 @@
       <option name="project" value="LOCAL" />
       <updated>1499248840389</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="View Model Path Set. Moving onto next phase.">
+      <created>1500021970364</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1500021970364</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -607,7 +608,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="FTP Upload Functionality Done" />
     <MESSAGE value="User Creation In database Done. ORM Connectivity Completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="User Creation In database Done. ORM Connectivity Completed" />
+    <MESSAGE value="View Model Path Set. Moving onto next phase." />
+    <option name="LAST_COMMIT_MESSAGE" value="View Model Path Set. Moving onto next phase." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
